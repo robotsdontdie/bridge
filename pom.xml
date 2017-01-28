@@ -16,4 +16,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <defaultGoal>clean test</defaultGoal>
+  </build>
 </project>
