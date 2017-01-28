@@ -50,6 +50,6 @@ public class Contract {
 	}
 
 	public Modifier getModifier() {
-		return Modifier;
+		return modifier;
 	}
 }

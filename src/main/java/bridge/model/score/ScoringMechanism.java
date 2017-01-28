@@ -6,7 +6,7 @@ import bridge.model.bidding.Contract.Modifier;
 
 public abstract class ScoringMechanism {
 
-	abstract Score computeScore(Result result, Team team);
+	abstract Score computeScore(Result result, Team team, Vulnerability vulnerability);
 
 
 
@@ -28,21 +28,21 @@ public abstract class ScoringMechanism {
 				
 				int gameBonus = 50;
 				if(contractPoints >= 100) {
-					bonusPoints = vulnerability.get(team).getGameBonus();
+					gameBonus = vulnerability.get(team).getGameBonus();
 				}
 
 				int overtricks = result.overtricks();
 				int overtrickPoints = 0;
 				int insult = 0;
 				switch(result.getContract().getModifier()) {
-					case Modifier.NONE:
+					case NONE:
 						overtrickPoints = result.getContract().getContractSuit().trickValue() * overtricks;
 						break;
-					case Modifier.DOUBLED:
+					case DOUBLED:
 						overtrickPoints = vulnerability.get(team).getDoubledOvertricks(overtricks);
 						insult = 50;
 						break;
-					case Modifier.REDOUBLED:
+					case REDOUBLED:
 						overtrickPoints = vulnerability.get(team).getRedoubledOvertricks(overtricks);
 						insult = 100;
 						break;

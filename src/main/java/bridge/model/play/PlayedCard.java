@@ -7,5 +7,8 @@ public class PlayedCard {
 	private final Card card;
 	private final Seat seat;
 
-	
+	public PlayedCard(Card card, Seat seat) {
+		this.card = card;
+		this.seat = seat;
+	}
 }

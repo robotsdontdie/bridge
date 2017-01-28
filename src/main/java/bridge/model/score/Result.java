@@ -22,11 +22,11 @@ public class Result {
 	}
 
 	public boolean isMade() {
-		return overTricks() >= 0;
+		return overtricks() >= 0;
 	}
 
 	public int overtricks() {
-		return tricksTaken - (contract.getContractLevel().asInt() + 6)
+		return tricksTaken - (contract.getContractLevel().asInt() + 6);
 	}
 
 	public Score getScore(ScoringMechanism scoring, Team team, Vulnerability vulnerability) {

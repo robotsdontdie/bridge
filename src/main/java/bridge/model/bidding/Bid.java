@@ -94,7 +94,7 @@ public class Bid implements Comparable<Bid> {
 		return suit;
 	}
 
-	public Suit getContractPoints() {
+	public int getContractPoints() {
 		if(this.special)
 			return 0;
 		int base = level.asInt() * suit.trickValue();
