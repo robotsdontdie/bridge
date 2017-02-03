@@ -1,15 +1,21 @@
 package bridge.model.cards;
 
+import bridge.model.bidding.Bid;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Card {
 
 	public static enum Suit {
-		CLUBS(), DIAMONDS(), HEARTS(), SPADES();
+		CLUBS(Bid.Suit.CLUBS), DIAMONDS(Bid.Suit.DIAMONDS), HEARTS(Bid.Suit.HEARTS), SPADES(Bid.Suit.SPADES);
 
-		Suit() {
-			
+		private Bid.Suit suit;
+		Suit(Bid.Suit) {
+			this.suit = suit;
+		}
+
+		public boolean isTrumpIn(Bid.Suit suit) {
+			return this.suit.equals(suit);
 		}
 	}
 
