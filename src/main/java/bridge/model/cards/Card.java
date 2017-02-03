@@ -10,7 +10,7 @@ public class Card {
 		CLUBS(Bid.Suit.CLUBS), DIAMONDS(Bid.Suit.DIAMONDS), HEARTS(Bid.Suit.HEARTS), SPADES(Bid.Suit.SPADES);
 
 		private Bid.Suit suit;
-		Suit(Bid.Suit) {
+		Suit(Bid.Suit suit) {
 			this.suit = suit;
 		}
 

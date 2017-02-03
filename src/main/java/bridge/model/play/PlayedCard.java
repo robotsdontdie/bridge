@@ -11,4 +11,12 @@ public class PlayedCard {
 		this.card = card;
 		this.seat = seat;
 	}
+
+	public Card getCard() {
+		return card;
+	}
+
+	public Seat getSeat() {
+		return seat;
+	}
 }

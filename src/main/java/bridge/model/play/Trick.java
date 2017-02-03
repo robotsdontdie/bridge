@@ -2,6 +2,11 @@ package bridge.model.play;
 
 import bridge.model.bidding.Bid;
 import bridge.model.cards.Card;
+import bridge.model.player.Seat;
+import bridge.model.game.Deal;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Trick {
 	
@@ -19,7 +24,7 @@ public class Trick {
 		this.deal = deal;
 		this.leadingSeat = leadingSeat;
 
-		cards = new ArrayList<Card>(4);
+		cards = new ArrayList<PlayedCard>(4);
 		nextSeat = leadingSeat;
 		leadSuit = null;
 	}
@@ -37,7 +42,7 @@ public class Trick {
 
 	public void play(Card card, Seat seat) throws InvalidPlayException {
 		if(!isValid(card, seat)) {
-			throw new InvalidPlayException("Cannot play this card");
+			throw new InvalidPlayException("Cannot play this card", card);
 		}
 		cards.add(new PlayedCard(card, seat));
 		if(leadSuit == null)
